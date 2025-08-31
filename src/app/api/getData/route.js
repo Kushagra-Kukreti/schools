@@ -24,7 +24,6 @@ export async function POST(request){
         fs.writeFileSync(filePath,buffer)
         
         const imageUrl = await uploadOnCloudinary(filePath)
-        console.log("image url",imageUrl);
         
         const addedData = await db.execute(`
            insert into schools(name,address,city,state,contact,image,email_id)
